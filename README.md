@@ -13,3 +13,4 @@ To run enter the following commands:
 
 The compiler will write an output.asm file which will contain nasm formated x86 assembly code which you can assemble and link using nasm and gcc. The code follows linux calling convention so it won't link on Windows or OSX.
 
+Two example programs are included. One computes factorials using recursion and another is a while loop that sums the elements of an array. 

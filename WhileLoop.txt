@@ -1,0 +1,17 @@
+int main(void){
+	int n;
+	int x;
+	int a[5];
+	n=0;
+	while(n<5){
+		a[n] = n;
+		n=n+1;
+	}
+	n=0;
+	x=0;
+	while(n<5){
+		x = x + a[n];
+		n = n+1;
+	}
+	return x;
+}
