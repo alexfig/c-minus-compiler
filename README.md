@@ -11,6 +11,11 @@ To run enter the following commands:
     cc lex.yy.c y.tab.c emitcode.c symtable.c
     ./a.out << 'sourcecode'
 
-The compiler will write an output.asm file which will contain nasm formated x86 assembly code which you can assemble and link using nasm and gcc. The code follows linux calling convention so it won't link on Windows or OSX.
+The compiler will write an output.asm file which will contain nasm formated x86 assembly code. It also adds a call to the C function printf to print the return value of any function that has one. You can assemble and link using nasm and gcc. 
 
-Two example programs are included. One computes factorials using recursion and another is a while loop that sums the elements of an array. 
+    nasm -f elf -g -F stabs output.asm -l output.lst
+    gcc –m32 output.o –o output
+    
+The code follows Linux calling convention so it won't link on Windows or OSX.
+
+Two example programs are included. One computes factorials using recursion and another is a while loop that sums the elements of an array containting the numbers 1 through 4. 
